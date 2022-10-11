@@ -29,11 +29,9 @@ object LogMessageTypeCount:
 
   def getConf(inputPath: String, outputPath: String):JobConf =
     val config: Configuration = new Configuration()
-    config.set("test", "123")
-
     val conf: JobConf = new JobConf(config, this.getClass)
     conf.setJobName(this.getClass.toString)
-    conf.set("fs.defaultFS", "local")
+//    conf.set("fs.defaultFS", "local")
     conf.set("mapreduce.job.maps", "1")
     conf.set("mapreduce.job.reduces", "1")
     conf.set("mapred.textoutputformat.separator", ",")

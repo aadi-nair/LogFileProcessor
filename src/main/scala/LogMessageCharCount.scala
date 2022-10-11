@@ -7,11 +7,16 @@ import java.io.IOException
 import java.util
 import scala.jdk.CollectionConverters.*
 import com.typesafe.config.{Config, ConfigFactory}
+import org.slf4j.{Logger, LoggerFactory}
+import HelperUtils.CreateLogger
+
 
 //Finally, you will produce the number of characters in each log message
 //for each log message type that contain the highest number of characters
 //in the detected instances of the designated regex pattern.
 object LogMessageCharCount:
+  val logger: Logger = CreateLogger(classOf[LogMessageCharCount.type])
+
   val applicationConf: Config = ConfigFactory.load("application.conf")
 
   class Map extends MapReduceBase with Mapper[LongWritable, Text, Text, IntWritable] :
@@ -22,13 +27,13 @@ object LogMessageCharCount:
     def map(key: LongWritable, value: Text, output: OutputCollector[Text, IntWritable], reporter: Reporter): Unit =
 
       val line: String = value.toString
-
+      // considering log message as all text that occurs after "-"
       try{
         val indexOfDash: Int = line.indexOf(" - ")
         val logMessage: String = line.substring(indexOfDash + 2)
         val lineParts: Array[String] = line.split(" ")
         val pattern: String = applicationConf.getString("logFileProcessor.pattern")
-
+        //checking for pattern`
         if(logMessage.toLowerCase().contains(pattern.toLowerCase())){
           timestamp.set(lineParts(0))
           charCount.set(logMessage.length())
@@ -37,11 +42,11 @@ object LogMessageCharCount:
       }
       catch{
         case outOfIndex: java.lang.IndexOutOfBoundsException =>{
-          print(outOfIndex)
+          logger.error(outOfIndex.toString)
           throw outOfIndex
         }
         case configExc: com.typesafe.config.ConfigException => {
-          println(configExc)
+          logger.error(configExc.toString)
           throw configExc
         }
 
@@ -59,7 +64,7 @@ object LogMessageCharCount:
   def getConf(inputPath: String, outputPath: String): JobConf =
     val conf: JobConf = new JobConf(this.getClass)
     conf.setJobName(this.getClass.toString)
-    conf.set("fs.defaultFS", "local")
+//    conf.set("fs.defaultFS", "local")
     conf.set("mapreduce.job.maps", "1")
     conf.set("mapreduce.job.reduces", "1")
     conf.set("mapred.textoutputformat.separator", ",");

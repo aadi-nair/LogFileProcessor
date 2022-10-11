@@ -7,6 +7,8 @@ import org.apache.hadoop.mapred.*
 import java.util
 import scala.jdk.CollectionConverters.*
 import com.typesafe.config.{Config, ConfigFactory}
+import org.slf4j.Logger
+import HelperUtils.CreateLogger
 
 
 //First, you will compute a spreadsheet or an CSV file
@@ -15,7 +17,7 @@ import com.typesafe.config.{Config, ConfigFactory}
 //for these log message types.
 
 object LogMessageTypeInterval :
-
+  val logger: Logger = CreateLogger(classOf[LogMessageTypeInterval.type])
   val applicationConf: Config = ConfigFactory.load("application.conf")
   class Map extends MapReduceBase with Mapper[LongWritable, Text, Text, IntWritable] :
     private final val one = new IntWritable(1)
@@ -34,25 +36,27 @@ object LogMessageTypeInterval :
         val lineParts: Array[String] = line.split(" ")
         val currentTime: java.util.Date = format.parse(lineParts(0))
 
+        //extracting log message i.e text after "- "
         val indexOfDash: Int = line.indexOf(" - ")
         val logMessage: String = line.substring(indexOfDash + 2)
 
         if (currentTime.after(startTime) && currentTime.before(endTime) && logMessage.toLowerCase().contains(pattern.toLowerCase())) {
           error.set(lineParts(2))
+          //storing intermediate keys as (<error-type>, one)
           output.collect(error, one)
         }
       }
       catch {
         case parse: java.text.ParseException => {
-          println(parse)
+          logger.error(parse.toString)
           throw parse
         }
         case configExc: com.typesafe.config.ConfigException => {
-          println(configExc)
+          logger.error(configExc.toString)
           throw configExc
         }
         case outOfBound:java.lang.IndexOutOfBoundsException =>{
-          println(outOfBound)
+          logger.error(outOfBound.toString)
           throw outOfBound
         }
       }
@@ -69,7 +73,7 @@ object LogMessageTypeInterval :
   def getConf(inputPath: String, outputPath: String): JobConf =
     val conf: JobConf = new JobConf(this.getClass)
     conf.setJobName(this.getClass.toString)
-    conf.set("fs.defaultFS", "local")
+//    conf.set("fs.defaultFS", "local")
     conf.set("mapreduce.job.maps", "1")
     conf.set("mapreduce.job.reduces", "1")
     conf.set("mapred.textoutputformat.separator", ",");
