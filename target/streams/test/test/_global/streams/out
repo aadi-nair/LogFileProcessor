@@ -1,0 +1,14 @@
+[0m[[0m[0mdebug[0m] [0m[0mRunning TaskDef(LogMessageTest, org.scalatest.tools.Framework$$anon$1@9519061, false, [SuiteSelector])[0m
+[0m[[0m[0minfo[0m] [0m[0m[32mLogMessageTest:[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32mLogMessageCharCount.Map produces intermediate keys <timestamp, charCount>[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32mErrorLogMessageInterval.Map outputs <currentStartTimeInterval,1> when it sees a ERROR message[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32mErrorLogMessageInterval.Reduce should output <currentStartTimeInterval - endTimeInterval,count>[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32mmapper should be able to parse message type from log message[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32mMapper should throw error when log message is faulty[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[36mRun completed in 1 second, 890 milliseconds.[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[36mTotal number of tests run: 0[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[36mSuites: completed 1, aborted 0[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[36mTests: succeeded 0, failed 0, canceled 0, ignored 0, pending 0[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[33mNo tests were executed.[0m[0m
+[0m[[0m[0mdebug[0m] [0m[0mPassed tests:[0m
+[0m[[0m[0mdebug[0m] [0m[0m	LogMessageTest[0m

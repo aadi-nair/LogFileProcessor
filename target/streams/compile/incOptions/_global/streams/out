@@ -1,2 +1,57 @@
 [0m[[0m[0mdebug[0m] [0m[0mCreated transactional ClassFileManager with tempDir = /Users/aditya/Documents/CS441/LogFileProcessor/target/scala-3.1.3/classes.bak[0m
+[0m[[0m[0mdebug[0m] [0m[0mAbout to delete class files:[0m
+[0m[[0m[0mdebug[0m] [0m[0mWe backup class files:[0m
+[0m[[0m[0mdebug[0m] [0m[0mRegistering generated classes:[0m
+[0m[[0m[0mdebug[0m] [0m[0m	LogMessageTypeInterval.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	LogMessageTypeInterval$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	LogMessageReOrder$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	ErrorLogMessageInterval$Reduce.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	ErrorLogMessageInterval$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	LogMessageReOrder$DescendingKeyComparator.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	LogMessageTypeCount$Map.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	LogMessageTypeCount$Reduce.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	LogMessageReOrder$Reduce.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	CreateLogger$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	LogMessageTypeInterval$Reduce.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	LogMessageTypeInterval$Map.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	LogMessageCharCount$Reduce.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	ErrorLogMessageInterval.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	LogMessageTypeCount$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	LogMessageReOrder.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	LogMessageReOrder$Map.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	LogFileProcessor.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	LogMessageCharCount.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	LogMessageTypeCount.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	runMapReduce.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	ErrorLogMessageInterval$Map.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	LogMessageCharCount$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	CreateLogger.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	LogMessageCharCount$Map.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	LogFileProcessor$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	LogMessageTypeInterval.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	LogMessageTypeInterval$.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	LogMessageReOrder$.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	ErrorLogMessageInterval$Reduce.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	ErrorLogMessageInterval$.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	LogMessageReOrder$DescendingKeyComparator.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	LogMessageTypeCount$Map.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	LogMessageTypeCount$Reduce.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	LogMessageReOrder$Reduce.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	CreateLogger$.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	LogMessageTypeInterval$Reduce.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	LogMessageTypeInterval$Map.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	LogMessageCharCount$Reduce.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	ErrorLogMessageInterval.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	LogMessageTypeCount$.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	LogMessageReOrder.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	LogMessageReOrder$Map.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	LogFileProcessor.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	LogMessageCharCount.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	LogMessageTypeCount.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	runMapReduce.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	ErrorLogMessageInterval$Map.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	LogMessageCharCount$.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	CreateLogger.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	LogMessageCharCount$Map.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	LogFileProcessor$.tasty[0m
 [0m[[0m[0mdebug[0m] [0m[0mRemoving the temporary directory used for backing up class files: /Users/aditya/Documents/CS441/LogFileProcessor/target/scala-3.1.3/classes.bak[0m
